@@ -89,23 +89,23 @@ export function UploadForm({ onVideoSubmit, onVideoReady }: UploadFormProps) {
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-200">YouTube URL</label>
+        <label className="text-sm font-medium text-[var(--text-primary)]">YouTube URL</label>
         <input
           value={youtubeUrl}
           onChange={(event) => setYoutubeUrl(event.target.value)}
-          className="w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-sm outline-none placeholder:text-slate-500"
+          className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
           placeholder="https://www.youtube.com/watch?v=..."
         />
       </div>
 
-      <div className="flex items-center gap-3 text-xs text-slate-400">
-        <div className="h-px flex-1 bg-slate-800" />
+      <div className="flex items-center gap-3 text-xs text-[var(--text-secondary)]">
+        <div className="h-px flex-1 bg-[var(--border)]" />
         or
-        <div className="h-px flex-1 bg-slate-800" />
+        <div className="h-px flex-1 bg-[var(--border)]" />
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="video-upload" className="text-sm font-medium text-slate-200">
+        <label htmlFor="video-upload" className="text-sm font-medium text-[var(--text-primary)]">
           Upload a video file
         </label>
         <input
@@ -113,12 +113,12 @@ export function UploadForm({ onVideoSubmit, onVideoReady }: UploadFormProps) {
           type="file"
           accept="video/*"
           onChange={(event) => setSelectedFile(event.target.files?.[0] ?? null)}
-          className="block w-full rounded-md border border-dashed border-slate-700 bg-slate-950 px-3 py-8 text-sm text-slate-400"
+          className="block w-full rounded-md border border-dashed border-[var(--border)] bg-[var(--background)] px-3 py-8 text-sm text-[var(--text-secondary)]"
         />
       </div>
 
       {uploadError ? (
-        <p className="rounded-md border border-red-800/60 bg-red-950/40 px-3 py-2 text-sm text-red-300">
+        <p className="rounded-md border border-[var(--error)]/40 bg-[var(--error)]/10 px-3 py-2 text-sm text-[var(--error)]">
           {uploadError}
         </p>
       ) : null}

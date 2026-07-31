@@ -45,7 +45,7 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
     <section className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold">Generated clips</h2>
-        <span className="text-sm text-slate-400">{clips.length} item{clips.length === 1 ? '' : 's'}</span>
+        <span className="text-sm text-[var(--text-secondary)]">{clips.length} item{clips.length === 1 ? '' : 's'}</span>
       </div>
 
       {clips.length === 0 ? (
@@ -69,13 +69,13 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
                 }
               >
                 <CardContent className="space-y-3 pt-6">
-                  <div className="rounded-lg bg-slate-900 p-4 text-sm">
+                  <div className="rounded-lg bg-[var(--background)] p-4 text-sm">
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <div className="font-medium text-slate-100">
+                        <div className="font-medium text-[var(--text-primary)]">
                           {formatTime(clip.start)} - {formatTime(clip.end)}
                         </div>
-                        <div className="mt-1 text-slate-400">Duration: {formatTime(clip.end - clip.start)}</div>
+                        <div className="mt-1 text-[var(--text-secondary)]">Duration: {formatTime(clip.end - clip.start)}</div>
                       </div>
                       <Button
                         type="button"
@@ -91,14 +91,14 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
                   </div>
 
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Status</span>
+                    <span className="text-[var(--text-secondary)]">Status</span>
                     {clipStatus === 'processing' ? (
                       <span className="inline-flex items-center gap-2 rounded-full bg-amber-900/40 px-3 py-1 text-xs font-medium text-amber-200">
                         <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-amber-300/40 border-t-amber-200" />
                         Processing
                       </span>
                     ) : clipStatus === 'completed' ? (
-                      <span className="rounded-full bg-emerald-900/40 px-3 py-1 text-xs font-medium text-emerald-200">
+                      <span className="rounded-full bg-[var(--success)]/10 px-3 py-1 text-xs font-medium text-[var(--success)]">
                         Completed
                       </span>
                     ) : clipStatus === 'failed' ? (
@@ -106,14 +106,14 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
                         Failed
                       </span>
                     ) : (
-                      <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200">
+                      <span className="rounded-full bg-[var(--surface-hover)] px-3 py-1 text-xs font-medium text-[var(--text-primary)]">
                         Ready
                       </span>
                     )}
                   </div>
 
                   {clipStatus === 'failed' && clip.error ? (
-                    <p className="rounded-md border border-red-800/60 bg-red-950/40 px-3 py-2 text-xs text-red-200">
+                    <p className="rounded-md border border-[var(--error)]/40 bg-[var(--error)]/10 px-3 py-2 text-xs text-[var(--error)]">
                       {clip.error}
                     </p>
                   ) : null}
@@ -129,7 +129,7 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
                         const nextQuality = event.target.value as ClipQuality;
                         setSelectedQualities((current) => ({ ...current, [clip.id]: nextQuality }));
                       }}
-                      className="min-w-[180px] rounded-lg border border-slate-700 bg-slate-950 px-2.5 py-2 text-xs text-slate-200 outline-none"
+                      className="min-w-[180px] rounded-lg border border-[var(--border)] bg-[var(--background)] px-2.5 py-2 text-xs text-[var(--text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                       disabled={clipStatus === 'processing'}
                     >
                       <option value="480p">480p (Fast)</option>
@@ -140,7 +140,7 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
 
                     {clipStatus === 'completed' && clip.downloadUrl ? (
                       <a
-                        className="inline-flex h-10 items-center justify-center rounded-lg bg-[var(--accent)] px-4 text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--accent-hover)]"
+                        className="inline-flex h-10 items-center justify-center rounded-lg bg-[var(--accent)] px-4 text-sm font-medium text-[var(--accent-foreground)] hover:bg-[var(--accent-hover)]"
                         href={clip.downloadUrl}
                         target="_blank"
                         rel="noreferrer"
@@ -159,7 +159,7 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
                     )}
                   </div>
 
-                  <label className="flex items-center gap-2 text-sm text-slate-300">
+                  <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
                     <input
                       type="checkbox"
                       checked={addSubtitles}
@@ -168,7 +168,7 @@ export function ClipsGrid({ clips = [], onDeleteClip, onExportClip, highlightedC
 
                         setSubtitleSelections((current) => ({ ...current, [clip.id]: nextChecked }));
                       }}
-                      className="h-4 w-4 rounded border-slate-600 bg-slate-950 text-[var(--accent)] accent-[var(--accent)] outline-none"
+                      className="h-4 w-4 rounded border-[var(--border)] bg-[var(--background)] text-[var(--accent)] accent-[var(--accent)] outline-none"
                       disabled={clipStatus === 'processing'}
                     />
                     <span>Add subtitles</span>

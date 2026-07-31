@@ -8,7 +8,6 @@ import {
   Download,
   FileCheck2,
   Headphones,
-  Moon,
   Scissors,
   ShieldCheck,
   Sparkles,
@@ -21,6 +20,7 @@ import { ManualTrim } from '@/components/dashboard/manual-trim';
 import { ClipsGrid } from '@/components/dashboard/clips-grid';
 import { AiClipSuggestions } from '@/components/dashboard/ai-clip-suggestions';
 import { AuthenticatedUserMenu } from '@/components/authenticated-user-menu';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { createProject, updateProjectStatus } from '@/lib/projects';
 import type { ProjectStatus } from '@/lib/supabase/types';
 import { getJobStatus, processClips } from '@/lib/worker-api';
@@ -447,11 +447,11 @@ export default function DashboardRoutePage() {
   const completedClipCount = clips.filter((clip) => clip.status === 'completed').length;
 
   return (
-    <main className="min-h-screen bg-[#05070B] px-4 py-6 text-[var(--text-primary)] sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-6 text-[var(--text-primary)] sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <header className="flex items-center justify-between">
-          <div className="flex items-center gap-3 text-sky-400">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-sky-400/30 bg-sky-400/10">
+          <div className="flex items-center gap-3 text-[var(--brand)]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]">
               <Clapperboard className="h-5 w-5" aria-hidden="true" />
             </div>
             <span className="text-sm font-semibold uppercase tracking-[0.24em]">CLIPFORGE</span>
@@ -463,45 +463,37 @@ export default function DashboardRoutePage() {
               variant="ghost"
               size="sm"
               aria-label="Support"
-              className="gap-2 rounded-xl border border-slate-800 bg-slate-950/70 text-slate-300 hover:bg-slate-900 hover:text-slate-50"
+              className="gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
             >
               <Headphones className="h-4 w-4" aria-hidden="true" />
               <span className="hidden sm:inline">Support</span>
             </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              aria-label="Toggle theme"
-              className="h-9 w-9 rounded-xl border border-slate-800 bg-slate-950/70 px-0 text-slate-300 hover:bg-slate-900 hover:text-slate-50"
-            >
-              <Moon className="h-4 w-4" aria-hidden="true" />
-            </Button>
+            <ThemeToggle />
             <AuthenticatedUserMenu />
           </nav>
         </header>
 
         <section className="space-y-3">
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl">Dashboard</h1>
-          <p className="max-w-2xl text-sm leading-6 text-slate-400">
+          <h1 className="text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">Dashboard</h1>
+          <p className="max-w-2xl text-sm leading-6 text-[var(--text-secondary)]">
             Upload a source video, define manual clip ranges, and review your selected exports in one place.
           </p>
         </section>
 
         <section className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px]" aria-label="ClipForge workflow">
           <div className="mx-auto flex w-full max-w-3xl flex-col gap-5">
-            <Card className="border-slate-800/80 bg-slate-900/75">
+            <Card className="border-[var(--border)] bg-[var(--surface)]">
               <CardHeader className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-sky-400/30 bg-sky-400/10 text-sm font-semibold text-sky-200">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--brand)]/30 bg-[var(--brand-soft)] text-sm font-semibold text-[var(--brand)]">
                     1
                   </span>
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
-                      <UploadCloud className="h-4 w-4 text-sky-200" aria-hidden="true" />
+                      <UploadCloud className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
                       Upload source
                     </CardTitle>
-                    <p className="text-sm leading-6 text-slate-400">
+                    <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Add the long-form source from YouTube or upload a local video file.
                     </p>
                   </div>
@@ -512,18 +504,18 @@ export default function DashboardRoutePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-slate-800/80 bg-slate-900/75">
+            <Card className="border-[var(--border)] bg-[var(--surface)]">
               <CardHeader className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-400/10 text-sm font-semibold text-cyan-200">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--brand)]/30 bg-[var(--brand-soft)] text-sm font-semibold text-[var(--brand)]">
                     2
                   </span>
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
-                      <Scissors className="h-4 w-4 text-cyan-200" aria-hidden="true" />
+                      <Scissors className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
                       Define clips
                     </CardTitle>
-                    <p className="text-sm leading-6 text-slate-400">
+                    <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Trim precise ranges manually, then use AI suggestions to add promising moments to the same clip list.
                     </p>
                   </div>
@@ -541,25 +533,25 @@ export default function DashboardRoutePage() {
                     <AiClipSuggestions currentVideo={currentVideo} onAddSuggestion={handleAddSuggestedClip} />
                   </>
                 ) : (
-                  <div className="rounded-xl border border-dashed border-[var(--border)] bg-slate-950/70 px-4 py-8 text-sm text-[var(--text-secondary)]">
+                  <div className="rounded-xl border border-dashed border-[var(--border)] bg-[var(--background)] px-4 py-8 text-sm text-[var(--text-secondary)]">
                     Upload a source video to unlock manual trim controls and AI clip suggestions.
                   </div>
                 )}
               </CardContent>
             </Card>
 
-            <Card id="clips-section" className="border-slate-800/80 bg-slate-900/75">
+            <Card id="clips-section" className="border-[var(--border)] bg-[var(--surface)]">
               <CardHeader className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-blue-400/30 bg-blue-400/10 text-sm font-semibold text-blue-200">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--brand)]/30 bg-[var(--brand-soft)] text-sm font-semibold text-[var(--brand)]">
                     3
                   </span>
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
-                      <FileCheck2 className="h-4 w-4 text-blue-200" aria-hidden="true" />
+                      <FileCheck2 className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
                       Review exports
                     </CardTitle>
-                    <p className="text-sm leading-6 text-slate-400">
+                    <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Check the selected ranges, export status, output quality, subtitles, and completed downloads.
                     </p>
                   </div>
@@ -575,18 +567,18 @@ export default function DashboardRoutePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-slate-800/80 bg-slate-900/75">
+            <Card className="border-[var(--border)] bg-[var(--surface)]">
               <CardHeader className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-emerald-400/30 bg-emerald-400/10 text-sm font-semibold text-emerald-200">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--success)]/30 bg-[var(--success)]/10 text-sm font-semibold text-[var(--success)]">
                     4
                   </span>
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
-                      <Download className="h-4 w-4 text-emerald-200" aria-hidden="true" />
+                      <Download className="h-4 w-4 text-[var(--success)]" aria-hidden="true" />
                       Export clips
                     </CardTitle>
-                    <p className="text-sm leading-6 text-slate-400">
+                    <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Start exports from reviewed clips, monitor processing, and download finished short-form videos.
                     </p>
                   </div>
@@ -594,27 +586,27 @@ export default function DashboardRoutePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {isProjectSaving ? (
-                  <p className="rounded-lg border border-sky-900/60 bg-sky-950/30 px-3 py-2 text-sm text-sky-100">
+                  <p className="rounded-lg border border-[var(--brand)]/30 bg-[var(--brand-soft)] px-3 py-2 text-sm text-[var(--text-primary)]">
                     Saving project...
                   </p>
                 ) : null}
                 {projectPersistenceError ? (
-                  <p className="rounded-lg border border-red-900/60 bg-red-950/40 px-3 py-2 text-sm text-red-200">
+                  <p className="rounded-lg border border-[var(--error)]/40 bg-[var(--error)]/10 px-3 py-2 text-sm text-[var(--error)]">
                     Project changes could not be saved: {projectPersistenceError}
                   </p>
                 ) : null}
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Ready</p>
-                    <p className="mt-2 text-2xl font-semibold text-slate-100">{readyClipCount}</p>
+                  <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-secondary)]">Ready</p>
+                    <p className="mt-2 text-2xl font-semibold text-[var(--text-primary)]">{readyClipCount}</p>
                   </div>
-                  <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Processing</p>
-                    <p className="mt-2 text-2xl font-semibold text-amber-200">{processingClipCount}</p>
+                  <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-secondary)]">Processing</p>
+                    <p className="mt-2 text-2xl font-semibold text-[var(--warning)]">{processingClipCount}</p>
                   </div>
-                  <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Completed</p>
-                    <p className="mt-2 text-2xl font-semibold text-emerald-200">{completedClipCount}</p>
+                  <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-secondary)]">Completed</p>
+                    <p className="mt-2 text-2xl font-semibold text-[var(--success)]">{completedClipCount}</p>
                   </div>
                 </div>
               </CardContent>
@@ -622,7 +614,7 @@ export default function DashboardRoutePage() {
           </div>
 
           <aside className="lg:sticky lg:top-6">
-            <Card className="overflow-hidden border-[var(--border)] bg-slate-900/80">
+            <Card className="overflow-hidden border-[var(--border)] bg-[var(--surface)]">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <span className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 p-2 text-[var(--accent)]">
@@ -632,7 +624,7 @@ export default function DashboardRoutePage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm leading-6 text-slate-400">
+                <p className="text-sm leading-6 text-[var(--text-secondary)]">
                   A focused workspace for turning long-form videos into polished clips with trim controls, AI review, and export tracking.
                 </p>
                 <div className="grid gap-3">
@@ -642,10 +634,10 @@ export default function DashboardRoutePage() {
                     return (
                       <div
                         key={feature.label}
-                        className="flex items-center gap-3 rounded-lg border border-slate-800 bg-slate-950/80 p-3"
+                        className="flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--background)] p-3"
                       >
-                        <FeatureIcon className="h-4 w-4 text-sky-200" aria-hidden="true" />
-                        <span className="text-sm text-slate-200">{feature.label}</span>
+                        <FeatureIcon className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
+                        <span className="text-sm text-[var(--text-primary)]">{feature.label}</span>
                       </div>
                     );
                   })}

@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function DashboardPage() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-10 text-slate-100">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-10 text-[var(--text-primary)]">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <section className="flex flex-col gap-2">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-brand-500">VidRepurpose</p>
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-[var(--brand)]">VidRepurpose</p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Turn long-form videos into viral-ready clips</h1>
-          <p className="max-w-2xl text-slate-400">
+          <p className="max-w-2xl text-[var(--text-secondary)]">
             Paste a YouTube URL or upload a video file to start generating vertical, subtitle-rich short clips.
           </p>
         </section>
