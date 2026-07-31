@@ -1,6 +1,10 @@
-import { Button } from '@/components/ui/button';
+import { GetStartedCta } from '@/components/landing/get-started-cta';
 
-export function HeroSection() {
+type HeroSectionProps = {
+  isSignedIn: boolean;
+};
+
+export function HeroSection({ isSignedIn }: HeroSectionProps) {
   return (
     <section className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -14,7 +18,9 @@ export function HeroSection() {
           ClipForge finds the best moments, auto-generates subtitles, and reformats each segment into a vertical social-ready video in one workflow.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Button size="lg">Get Started Free</Button>
+          <GetStartedCta isSignedIn={isSignedIn} size="lg">
+            Get Started Free
+          </GetStartedCta>
         </div>
       </div>
 

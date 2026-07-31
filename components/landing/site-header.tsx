@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { GetStartedCta } from '@/components/landing/get-started-cta';
 import Link from 'next/link';
 import type { Route } from 'next';
 
@@ -7,7 +7,11 @@ const navLinks = [
   { label: 'Pricing', href: '#pricing' },
 ];
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  isSignedIn: boolean;
+};
+
+export function SiteHeader({ isSignedIn }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -37,9 +41,7 @@ export function SiteHeader() {
           >
             Sign In
           </Link>
-          <Link href={'/sign-up' as Route}>
-            <Button size="sm">Get Started</Button>
-          </Link>
+          <GetStartedCta isSignedIn={isSignedIn} size="sm" />
         </div>
       </div>
     </header>
