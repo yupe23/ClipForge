@@ -34,6 +34,8 @@ export default function SignInPage() {
           appearance={clerkAppearance}
           path="/sign-in"
           routing="path"
+          forceRedirectUrl="/dashboard"
+          fallbackRedirectUrl="/dashboard"
         />
       </div>
     </main>

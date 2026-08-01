@@ -34,6 +34,8 @@ export default function SignUpPage() {
           appearance={clerkAppearance}
           path="/sign-up"
           routing="path"
+          forceRedirectUrl="/dashboard"
+          fallbackRedirectUrl="/dashboard"
         />
       </div>
     </main>
