@@ -1,4 +1,5 @@
 import { GetStartedCta } from '@/components/landing/get-started-cta';
+import { UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import type { Route } from 'next';
 
@@ -35,13 +36,19 @@ export function SiteHeader({ isSignedIn }: SiteHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href={'/sign-in' as Route}
-            className="hidden h-9 items-center justify-center rounded-md px-3 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] sm:inline-flex"
-          >
-            Sign In
-          </Link>
-          <GetStartedCta isSignedIn={isSignedIn} size="sm" />
+          {!isSignedIn ? (
+            <>
+              <Link
+                href={'/sign-in' as Route}
+                className="hidden h-9 items-center justify-center rounded-md px-3 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] sm:inline-flex"
+              >
+                Sign In
+              </Link>
+              <GetStartedCta isSignedIn={isSignedIn} size="sm" />
+            </>
+          ) : (
+            <UserButton afterSignOutUrl="/" />
+          )}
         </div>
       </div>
     </header>
