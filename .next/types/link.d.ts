@@ -35,6 +35,8 @@ declare namespace __next_route_internal_types__ {
     | `/dashboard`
     | `/projects`
     | `/support`
+    | `/privacy`
+    | `/terms`
   type DynamicRoutes<T extends string = string> = 
     | `/api/projects/${SafeSlug<T>}`
     | `/sign-in/${OptionalCatchAllSlug<T>}`

@@ -1,6 +1,7 @@
 import { HeroSection } from '@/components/landing/hero-section';
 import { PricingSection } from '@/components/landing/pricing-section';
 import { SiteHeader } from '@/components/landing/site-header';
+import Link from 'next/link';
 
 const features = [
   {
@@ -33,7 +34,73 @@ export function LandingPage({ isSignedIn }: LandingPageProps) {
         <FeaturesSection />
         <PricingSection isSignedIn={isSignedIn} />
       </main>
+      <Footer />
     </div>
+  );
+}
+
+function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="border-t border-[var(--border)] bg-[var(--background)]">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+        <div>
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-sm font-semibold text-[var(--text-primary)]">
+              CF
+            </div>
+            <span className="text-sm font-semibold tracking-[0.16em] text-[var(--text-primary)]">CLIPFORGE</span>
+          </div>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--text-secondary)]">
+            Turn long-form video into short-form content with AI-assisted discovery, trimming, captions, and export workflows.
+          </p>
+        </div>
+
+        <nav aria-label="Footer navigation" className="space-y-3">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--text-secondary)]">Explore</h3>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              <Link href="#features" className="transition-colors hover:text-[var(--text-primary)]">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link href="#pricing" className="transition-colors hover:text-[var(--text-primary)]">
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link href="/support" className="transition-colors hover:text-[var(--text-primary)]">
+                Support
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Legal navigation" className="space-y-3">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--text-secondary)]">Legal</h3>
+          <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+            <li>
+              <Link href="/privacy" className="transition-colors hover:text-[var(--text-primary)]">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="transition-colors hover:text-[var(--text-primary)]">
+                Terms of Service
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div className="border-t border-[var(--border)]">
+        <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-4 text-center text-sm text-[var(--text-secondary)] sm:px-6 lg:px-8">
+          © {year} ClipForge. All rights reserved.
+        </div>
+      </div>
+    </footer>
   );
 }
 

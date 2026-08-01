@@ -757,6 +757,9 @@ video {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 @keyframes spin {
 
   to {
@@ -850,6 +853,11 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 .self-center {
   align-self: center;
@@ -1559,6 +1567,10 @@ select {
 
   .lg\:grid-cols-\[220px_minmax\(0\2c 1fr\)_220px\] {
     grid-template-columns: 220px minmax(0,1fr) 220px;
+  }
+
+  .lg\:grid-cols-\[1\.5fr_1fr_1fr\] {
+    grid-template-columns: 1.5fr 1fr 1fr;
   }
 
   .lg\:px-8 {
