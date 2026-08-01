@@ -33,6 +33,7 @@ declare namespace __next_route_internal_types__ {
     | `/api/health`
     | `/api/projects`
     | `/dashboard`
+    | `/dashboard/support`
     | `/projects`
     | `/support`
     | `/privacy`

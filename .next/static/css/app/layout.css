@@ -605,6 +605,9 @@ video {
 .mb-3 {
   margin-bottom: 0.75rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .block {
   display: block;
 }
@@ -1524,6 +1527,10 @@ select {
     padding-right: 1.5rem;
   }
 
+  .sm\:text-left {
+    text-align: left;
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1592,6 +1599,10 @@ select {
 
   .lg\:grid-cols-\[1\.5fr_1fr_1fr\] {
     grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:px-8 {

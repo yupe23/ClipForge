@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import {
   BadgeDollarSign,
   Captions,
@@ -458,16 +459,18 @@ export default function DashboardRoutePage() {
           </div>
 
           <nav className="flex items-center gap-2" aria-label="Dashboard navigation">
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              aria-label="Support"
-              className="gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
-            >
-              <Headphones className="h-4 w-4" aria-hidden="true" />
-              <span className="hidden sm:inline">Support</span>
-            </Button>
+            <Link href="/dashboard/support" className="inline-flex">
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                aria-label="Support"
+                className="gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
+              >
+                <Headphones className="h-4 w-4" aria-hidden="true" />
+                <span className="hidden sm:inline">Support</span>
+              </Button>
+            </Link>
             <ThemeToggle />
             <AuthenticatedUserMenu />
           </nav>
