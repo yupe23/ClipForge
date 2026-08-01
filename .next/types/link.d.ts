@@ -34,6 +34,15 @@ declare namespace __next_route_internal_types__ {
     | `/api/projects`
     | `/dashboard`
     | `/dashboard/support`
+    | `/dashboard/support/help`
+    | `/dashboard/support/help/getting-started`
+    | `/dashboard/support/help/uploading-videos`
+    | `/dashboard/support/help/ai-clip-generation`
+    | `/dashboard/support/help/subtitles`
+    | `/dashboard/support/help/exporting-clips`
+    | `/dashboard/support/help/account-billing`
+    | `/dashboard/support/contact`
+    | `/dashboard/support/donate`
     | `/projects`
     | `/support`
     | `/privacy`
