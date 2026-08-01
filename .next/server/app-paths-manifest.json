@@ -2,6 +2,6 @@
   "/page": "app/page.js",
   "/sign-up/[[...sign-up]]/page": "app/sign-up/[[...sign-up]]/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/sign-in/[[...sign-in]]/page": "app/sign-in/[[...sign-in]]/page.js",
-  "/support/page": "app/support/page.js"
+  "/support/page": "app/support/page.js",
+  "/privacy/page": "app/privacy/page.js"
 }
