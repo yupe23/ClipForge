@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import type { ContactSupportPayload } from './types';
+import type { ContactSupportPayload } from '../../../dashboard/support/contact/types';
 
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => null)) as Partial<ContactSupportPayload> | null;
