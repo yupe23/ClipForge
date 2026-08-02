@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import { resend } from '@/lib/email';
 import type { ContactSupportPayload } from '../../../dashboard/support/contact/types';
 
+const supportEmail = process.env.SUPPORT_EMAIL?.trim();
+
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => null)) as Partial<ContactSupportPayload> | null;
 
@@ -11,13 +13,34 @@ export async function POST(request: Request) {
   const subject = typeof body?.subject === 'string' ? body.subject.trim() : '';
   const message = typeof body?.message === 'string' ? body.message.trim() : '';
 
-  if (!email || !message) {
-    return NextResponse.json({ error: 'Email and message are required.' }, { status: 400 });
+  if (name.length > 100) {
+    return NextResponse.json({ error: 'Name must be 100 characters or less.' }, { status: 400 });
+  }
+
+  if (!email) {
+    return NextResponse.json({ error: 'Email is required.' }, { status: 400 });
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
     return NextResponse.json({ error: 'A valid email is required.' }, { status: 400 });
+  }
+
+  if (subject.length > 150) {
+    return NextResponse.json({ error: 'Subject must be 150 characters or less.' }, { status: 400 });
+  }
+
+  if (!message) {
+    return NextResponse.json({ error: 'Message is required.' }, { status: 400 });
+  }
+
+  if (message.length < 10 || message.length > 5000) {
+    return NextResponse.json({ error: 'Message must be between 10 and 5000 characters.' }, { status: 400 });
+  }
+
+  if (!supportEmail) {
+    console.error('Missing SUPPORT_EMAIL environment variable.');
+    return NextResponse.json({ error: 'Support email is not configured.' }, { status: 500 });
   }
 
   const details = [
@@ -40,7 +63,7 @@ export async function POST(request: Request) {
   try {
     const result = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'clipforge.app10@gmail.com',
+      to: supportEmail,
       reply_to: email,
       subject: 'Support request - ClipForge',
       text: details,
