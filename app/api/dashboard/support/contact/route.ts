@@ -4,8 +4,43 @@ import { resend } from '@/lib/email';
 import type { ContactSupportPayload } from '../../../dashboard/support/contact/types';
 
 const supportEmail = process.env.SUPPORT_EMAIL?.trim();
+const requestWindowMs = 60 * 1000;
+const maxRequestsPerWindow = 5;
+const requestLog = new Map<string, number[]>();
+
+function getClientIp(request: Request) {
+  const forwarded = request.headers.get('x-forwarded-for');
+  if (forwarded) {
+    return forwarded.split(',')[0]?.trim() || 'unknown';
+  }
+
+  return request.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(request: Request) {
+  const clientIp = getClientIp(request);
+  const now = Date.now();
+  const timestamps = requestLog.get(clientIp) ?? [];
+  const recentTimestamps = timestamps.filter((timestamp) => now - timestamp < requestWindowMs);
+
+  requestLog.set(clientIp, recentTimestamps);
+
+  if (recentTimestamps.length >= maxRequestsPerWindow) {
+    recentTimestamps.push(now);
+    requestLog.set(clientIp, recentTimestamps);
+    return true;
+  }
+
+  recentTimestamps.push(now);
+  requestLog.set(clientIp, recentTimestamps);
+  return false;
+}
 
 export async function POST(request: Request) {
+  if (isRateLimited(request)) {
+    return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+  }
+
   const body = (await request.json().catch(() => null)) as Partial<ContactSupportPayload> | null;
 
   const name = typeof body?.name === 'string' ? body.name.trim() : '';
