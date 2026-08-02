@@ -3,84 +3,44 @@
     "523db83b41cffac58b40ca29f671e645479c7678": {
       "workers": {
         "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/sign-up/[[...sign-up]]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/donate/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/help/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/contact/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!"
+        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/page": "rsc",
-        "app/sign-up/[[...sign-up]]/page": "rsc",
-        "app/dashboard/page": "rsc",
-        "app/dashboard/support/page": "rsc",
-        "app/dashboard/support/donate/page": "rsc",
-        "app/dashboard/support/help/page": "rsc",
-        "app/dashboard/support/contact/page": "rsc"
+        "app/dashboard/page": "rsc"
       }
     },
     "bdf93983f8d2554c3ddcfac7c680346c93895ed0": {
       "workers": {
         "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/sign-up/[[...sign-up]]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/donate/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/help/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/contact/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!"
+        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/page": "rsc",
-        "app/sign-up/[[...sign-up]]/page": "rsc",
-        "app/dashboard/page": "rsc",
-        "app/dashboard/support/page": "rsc",
-        "app/dashboard/support/donate/page": "rsc",
-        "app/dashboard/support/help/page": "rsc",
-        "app/dashboard/support/contact/page": "rsc"
+        "app/dashboard/page": "rsc"
       }
     },
     "fb59ad2d1f701439b74a5b56d3fb89cdf8ccbca2": {
       "workers": {
         "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/sign-up/[[...sign-up]]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/donate/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/help/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/support/contact/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!"
+        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Ckeyless-actions.js%22%2C%5B%22createOrReadKeylessAction%22%2C%22syncKeylessConfigAction%22%2C%22deleteKeylessAction%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/page": "rsc",
-        "app/sign-up/[[...sign-up]]/page": "rsc",
-        "app/dashboard/page": "rsc",
-        "app/dashboard/support/page": "rsc",
-        "app/dashboard/support/donate/page": "rsc",
-        "app/dashboard/support/help/page": "rsc",
-        "app/dashboard/support/contact/page": "rsc"
+        "app/dashboard/page": "rsc"
       }
     },
     "e5a40bac3adc7d3c58fb1b676172ec5d149c1c6d": {
       "workers": {
         "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
-        "app/sign-up/[[...sign-up]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
-        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
-        "app/dashboard/support/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
-        "app/dashboard/support/donate/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
-        "app/dashboard/support/help/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
-        "app/dashboard/support/contact/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!"
+        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22E%3A%5C%5CMy_project%5C%5CBig-project%5C%5CReclip%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/page": "action-browser",
-        "app/sign-up/[[...sign-up]]/page": "action-browser",
-        "app/dashboard/page": "action-browser",
-        "app/dashboard/support/page": "action-browser",
-        "app/dashboard/support/donate/page": "action-browser",
-        "app/dashboard/support/help/page": "action-browser",
-        "app/dashboard/support/contact/page": "action-browser"
+        "app/dashboard/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "byr2Si2AgvO6wKbjqvff6G/l2E+Sc00lp6eHqpkJ3Ks="
+  "encryptionKey": "+EAICOUXxlWMky3y3bi73m+mA2r0+YNUiGTOBEkdE4o="
 }

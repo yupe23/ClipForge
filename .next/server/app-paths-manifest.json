@@ -1,7 +1,4 @@
 {
-  "/dashboard/support/page": "app/dashboard/support/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/support/donate/page": "app/dashboard/support/donate/page.js",
-  "/dashboard/support/help/page": "app/dashboard/support/help/page.js",
-  "/dashboard/support/contact/page": "app/dashboard/support/contact/page.js"
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
 }
