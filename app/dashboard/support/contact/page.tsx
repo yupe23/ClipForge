@@ -1,12 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-export type ContactSupportPayload = {
-  name?: string;
-  email: string;
-  subject?: string;
-  message: string;
-};
+import type { ContactSupportPayload } from './types';
 
 export async function submitContactSupportRequest(
   payload: ContactSupportPayload,

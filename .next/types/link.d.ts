@@ -35,6 +35,7 @@ declare namespace __next_route_internal_types__ {
     | `/dashboard`
     | `/dashboard/support`
     | `/dashboard/support/contact`
+    | `/dashboard/support/contact`
     | `/dashboard/support/donate`
     | `/dashboard/support/help`
     | `/dashboard/support/help/account-billing`
