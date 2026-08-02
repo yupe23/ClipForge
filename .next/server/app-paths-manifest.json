@@ -1,3 +1,6 @@
 {
-  "/dashboard/support/contact/page": "app/dashboard/support/contact/page.js"
+  "/dashboard/support/contact/page": "app/dashboard/support/contact/page.js",
+  "/dashboard/support/page": "app/dashboard/support/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/api/dashboard/support/contact/route": "app/api/dashboard/support/contact/route.js"
 }

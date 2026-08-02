@@ -15,22 +15,63 @@ export default function DashboardContactSupportPage() {
   const [submitError, setSubmitError] = React.useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = React.useState(false);
 
+  const nameInputRef = React.useRef<HTMLInputElement>(null);
+  const emailInputRef = React.useRef<HTMLInputElement>(null);
+  const messageInputRef = React.useRef<HTMLTextAreaElement>(null);
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (isSubmitting) {
+      return;
+    }
+
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedSubject = subject.trim();
+    const trimmedMessage = message.trim();
+
+    if (!trimmedEmail) {
+      setSubmitError('Email is required.');
+      emailInputRef.current?.focus();
+      return;
+    }
+
+    if (!trimmedMessage) {
+      setSubmitError('Message is required.');
+      messageInputRef.current?.focus();
+      return;
+    }
+
+    if (trimmedMessage.length < 10 || trimmedMessage.length > 5000) {
+      setSubmitError('Message must be between 10 and 5000 characters.');
+      messageInputRef.current?.focus();
+      return;
+    }
+
     setSubmitError(null);
     setSubmitSuccess(false);
     setIsSubmitting(true);
 
     try {
-      await handleContactSupportSubmit({ name, email, subject, message });
+      await handleContactSupportSubmit({
+        name: trimmedName,
+        email: trimmedEmail,
+        subject: trimmedSubject,
+        message: trimmedMessage,
+      });
       setSubmitSuccess(true);
       setName('');
       setEmail('');
       setSubject('');
       setMessage('');
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Unable to submit support request.';
-      setSubmitError(message);
+      const nextError = error instanceof Error ? error.message : 'Unable to submit support request.';
+      setSubmitError(nextError);
+      if (!trimmedEmail || !trimmedMessage) {
+        return;
+      }
+      emailInputRef.current?.focus();
     } finally {
       setIsSubmitting(false);
     }
@@ -66,9 +107,11 @@ export default function DashboardContactSupportPage() {
               </label>
               <input
                 id="name"
+                ref={nameInputRef}
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                disabled={isSubmitting}
+                className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-60"
                 placeholder="Your name"
               />
             </div>
@@ -79,10 +122,12 @@ export default function DashboardContactSupportPage() {
               </label>
               <input
                 id="email"
+                ref={emailInputRef}
                 type="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                disabled={isSubmitting}
+                className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-60"
                 placeholder="you@example.com"
                 required
               />
@@ -97,7 +142,8 @@ export default function DashboardContactSupportPage() {
               id="subject"
               value={subject}
               onChange={(event) => setSubject(event.target.value)}
-              className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              disabled={isSubmitting}
+              className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="Optional"
             />
           </div>
@@ -108,10 +154,12 @@ export default function DashboardContactSupportPage() {
             </label>
             <textarea
               id="message"
+              ref={messageInputRef}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               rows={6}
-              className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              disabled={isSubmitting}
+              className="w-full rounded-md border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-secondary)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="Tell us what you need help with..."
               required
             />
@@ -131,10 +179,17 @@ export default function DashboardContactSupportPage() {
 
           <div className="flex flex-wrap gap-3">
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Send message'}
+              {isSubmitting ? (
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                  Sending...
+                </span>
+              ) : (
+                'Send message'
+              )}
             </Button>
             <Link href="/dashboard/support" className="inline-flex">
-              <Button type="button" variant="secondary" size="lg">
+              <Button type="button" variant="secondary" size="lg" disabled={isSubmitting}>
                 Back to Support Center
               </Button>
             </Link>
