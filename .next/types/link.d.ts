@@ -30,9 +30,6 @@ declare namespace __next_route_internal_types__ {
 
   type StaticRoutes = 
     | `/`
-    | `/api/dashboard/support/contact`
-    | `/api/health`
-    | `/api/projects`
     | `/dashboard`
     | `/dashboard/support`
     | `/dashboard/support/contact`
@@ -44,6 +41,9 @@ declare namespace __next_route_internal_types__ {
     | `/dashboard/support/help/getting-started`
     | `/dashboard/support/help/subtitles`
     | `/dashboard/support/help/uploading-videos`
+    | `/api/dashboard/support/contact`
+    | `/api/health`
+    | `/api/projects`
     | `/privacy`
     | `/projects`
     | `/support`

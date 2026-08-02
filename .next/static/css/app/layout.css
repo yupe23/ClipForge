@@ -927,6 +927,9 @@ video {
 .border-amber-300\/40 {
   border-color: rgb(252 211 77 / 0.4);
 }
+.border-emerald-500\/40 {
+  border-color: rgb(16 185 129 / 0.4);
+}
 .border-red-800\/60 {
   border-color: rgb(153 27 27 / 0.6);
 }
@@ -981,6 +984,9 @@ video {
 }
 .bg-black\/70 {
   background-color: rgb(0 0 0 / 0.7);
+}
+.bg-emerald-500\/10 {
+  background-color: rgb(16 185 129 / 0.1);
 }
 .bg-red-900\/40 {
   background-color: rgb(127 29 29 / 0.4);
@@ -1235,6 +1241,10 @@ video {
 .text-amber-200 {
   --tw-text-opacity: 1;
   color: rgb(253 230 138 / var(--tw-text-opacity, 1));
+}
+.text-emerald-600 {
+  --tw-text-opacity: 1;
+  color: rgb(5 150 105 / var(--tw-text-opacity, 1));
 }
 .text-red-100\/80 {
   color: rgb(254 226 226 / 0.8);
