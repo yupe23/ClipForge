@@ -1,7 +1,7 @@
 {
-  "/page": "app/page.js",
-  "/sign-up/[[...sign-up]]/page": "app/sign-up/[[...sign-up]]/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/dashboard/support/page": "app/dashboard/support/page.js"
+  "/dashboard/support/page": "app/dashboard/support/page.js",
+  "/dashboard/support/donate/page": "app/dashboard/support/donate/page.js",
+  "/dashboard/support/help/page": "app/dashboard/support/help/page.js",
+  "/dashboard/support/contact/page": "app/dashboard/support/contact/page.js"
 }

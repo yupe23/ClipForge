@@ -34,18 +34,18 @@ declare namespace __next_route_internal_types__ {
     | `/api/projects`
     | `/dashboard`
     | `/dashboard/support`
-    | `/dashboard/support/help`
-    | `/dashboard/support/help/getting-started`
-    | `/dashboard/support/help/uploading-videos`
-    | `/dashboard/support/help/ai-clip-generation`
-    | `/dashboard/support/help/subtitles`
-    | `/dashboard/support/help/exporting-clips`
-    | `/dashboard/support/help/account-billing`
     | `/dashboard/support/contact`
     | `/dashboard/support/donate`
+    | `/dashboard/support/help`
+    | `/dashboard/support/help/account-billing`
+    | `/dashboard/support/help/ai-clip-generation`
+    | `/dashboard/support/help/exporting-clips`
+    | `/dashboard/support/help/getting-started`
+    | `/dashboard/support/help/subtitles`
+    | `/dashboard/support/help/uploading-videos`
+    | `/privacy`
     | `/projects`
     | `/support`
-    | `/privacy`
     | `/terms`
   type DynamicRoutes<T extends string = string> = 
     | `/api/projects/${SafeSlug<T>}`

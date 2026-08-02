@@ -1,6 +1,27 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
+export type ContactSupportPayload = {
+  name?: string;
+  email: string;
+  subject?: string;
+  message: string;
+};
+
+export async function submitContactSupportRequest(
+  payload: ContactSupportPayload,
+): Promise<{ success: boolean }> {
+  void payload;
+
+  return { success: true };
+}
+
+export async function handleContactSupportSubmit(
+  payload: ContactSupportPayload,
+): Promise<{ success: boolean }> {
+  return submitContactSupportRequest(payload);
+}
+
 export default function DashboardContactSupportPage() {
   return (
     <main className="min-h-screen bg-[var(--background)] px-4 py-6 text-[var(--text-primary)] sm:px-6 lg:px-8">
