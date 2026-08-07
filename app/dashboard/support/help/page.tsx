@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -12,8 +13,7 @@ const helpArticles = [
 
 export default function DashboardHelpCenterPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-6 text-[var(--text-primary)] sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <div>
         <div className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Dashboard help</p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">
@@ -26,7 +26,7 @@ export default function DashboardHelpCenterPage() {
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {helpArticles.map((article) => (
-            <Link key={article.slug} href={`/dashboard/support/help/${article.slug}`} className="block">
+            <Link key={article.slug} href={`/dashboard/support/help/${article.slug}` as Route} className="block">
               <Card className="h-full transition-colors hover:bg-[var(--surface-hover)]">
                 <CardHeader>
                   <CardTitle>{article.title}</CardTitle>
@@ -40,7 +40,6 @@ export default function DashboardHelpCenterPage() {
             </Link>
           ))}
         </div>
-      </div>
-    </main>
+    </div>
   );
 }

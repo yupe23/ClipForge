@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import Link from 'next/link';
 
 const supportCards = [
@@ -23,8 +24,7 @@ const supportCards = [
 
 export default function DashboardSupportPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-6 text-[var(--text-primary)] sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
+    <div>
         <div className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">Dashboard support</p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">
@@ -41,7 +41,7 @@ export default function DashboardSupportPage() {
               <h2 className="text-xl font-semibold text-[var(--text-primary)]">{card.title}</h2>
               <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">{card.description}</p>
               <Link
-                href={card.href}
+                href={card.href as Route}
                 className="mt-6 inline-flex items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--background)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-hover)]"
               >
                 {card.cta}
@@ -49,7 +49,6 @@ export default function DashboardSupportPage() {
             </section>
           ))}
         </div>
-      </div>
-    </main>
+    </div>
   );
 }

@@ -1,27 +1,22 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
 import {
   BadgeDollarSign,
   Captions,
   Clapperboard,
   Download,
   FileCheck2,
-  Headphones,
   Scissors,
   ShieldCheck,
   Sparkles,
   UploadCloud,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UploadForm } from '@/components/dashboard/upload-form';
 import { ManualTrim } from '@/components/dashboard/manual-trim';
 import { ClipsGrid } from '@/components/dashboard/clips-grid';
 import { AiClipSuggestions } from '@/components/dashboard/ai-clip-suggestions';
-import { AuthenticatedUserMenu } from '@/components/authenticated-user-menu';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { createProject, updateProjectStatus } from '@/lib/projects';
 import type { ProjectStatus } from '@/lib/supabase/types';
 import { getJobStatus, processClips } from '@/lib/worker-api';
@@ -448,34 +443,7 @@ export default function DashboardRoutePage() {
   const completedClipCount = clips.filter((clip) => clip.status === 'completed').length;
 
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-6 text-[var(--text-primary)] sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <header className="flex items-center justify-between">
-          <div className="flex items-center gap-3 text-[var(--brand)]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--brand)]/30 bg-[var(--brand-soft)]">
-              <Clapperboard className="h-5 w-5" aria-hidden="true" />
-            </div>
-            <span className="text-sm font-semibold uppercase tracking-[0.24em]">CLIPFORGE</span>
-          </div>
-
-          <nav className="flex items-center gap-2" aria-label="Dashboard navigation">
-            <Link href="/dashboard/support" className="inline-flex">
-              <Button
-                type="button"
-                variant="ghost"
-                size="sm"
-                aria-label="Support"
-                className="gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]"
-              >
-                <Headphones className="h-4 w-4" aria-hidden="true" />
-                <span className="hidden sm:inline">Support</span>
-              </Button>
-            </Link>
-            <ThemeToggle />
-            <AuthenticatedUserMenu />
-          </nav>
-        </header>
-
+    <>
         <section className="space-y-3">
           <h1 className="text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">Dashboard</h1>
           <p className="max-w-2xl text-sm leading-6 text-[var(--text-secondary)]">
@@ -494,7 +462,7 @@ export default function DashboardRoutePage() {
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
                       <UploadCloud className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
-                      Upload source
+                      Upload
                     </CardTitle>
                     <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Add the long-form source from YouTube or upload a local video file.
@@ -516,7 +484,7 @@ export default function DashboardRoutePage() {
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
                       <Scissors className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
-                      Define clips
+                      Trim
                     </CardTitle>
                     <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Trim precise ranges manually, then use AI suggestions to add promising moments to the same clip list.
@@ -552,7 +520,7 @@ export default function DashboardRoutePage() {
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
                       <FileCheck2 className="h-4 w-4 text-[var(--brand)]" aria-hidden="true" />
-                      Review exports
+                      Review
                     </CardTitle>
                     <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Check the selected ranges, export status, output quality, subtitles, and completed downloads.
@@ -579,7 +547,7 @@ export default function DashboardRoutePage() {
                   <div className="min-w-0 space-y-1">
                     <CardTitle className="flex items-center gap-2 text-lg">
                       <Download className="h-4 w-4 text-[var(--success)]" aria-hidden="true" />
-                      Export clips
+                      Export
                     </CardTitle>
                     <p className="text-sm leading-6 text-[var(--text-secondary)]">
                       Start exports from reviewed clips, monitor processing, and download finished short-form videos.
@@ -649,7 +617,6 @@ export default function DashboardRoutePage() {
             </Card>
           </aside>
         </section>
-      </div>
-    </main>
+    </>
   );
 }
