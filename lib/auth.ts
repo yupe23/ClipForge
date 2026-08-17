@@ -42,12 +42,7 @@ export async function getAuthenticatedUser(authContext = 'authenticated request'
     return null;
   }
 
-  if (claims?.sub !== userId) {
-    console.log(`${authContext} auth check failed`, { check: 'token_sub_mismatch', userId });
-    return null;
-  }
-
-  if (claims.role !== 'authenticated') {
+  if (claims?.role !== 'authenticated') {
     console.warn(`${authContext} Clerk session token may not be Supabase-compatible`, {
       role: claims?.role,
       userId,
