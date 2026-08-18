@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import { resend } from '@/lib/email';
-import type { ContactSupportPayload } from '../../../dashboard/support/contact/types';
+import type { ContactSupportPayload } from '../../../../dashboard/support/contact/types';
 
 const supportEmail = process.env.SUPPORT_EMAIL?.trim();
 const requestWindowMs = 60 * 1000;
@@ -99,7 +99,7 @@ export async function POST(request: Request) {
     const result = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: supportEmail,
-      reply_to: email,
+      replyTo: email,
       subject: 'Support request - ClipForge',
       text: details,
       html: htmlMessage,

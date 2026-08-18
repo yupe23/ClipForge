@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Route } from 'next';
 import { auth } from '@clerk/nextjs/server';
 import { Button } from '@/components/ui/button';
 
@@ -26,7 +27,7 @@ export default async function NotFound() {
               <Button variant="secondary" size="lg">Go to Dashboard</Button>
             </Link>
           ) : (
-            <Link href="/sign-in" className="inline-flex">
+            <Link href={'/sign-in' as Route} className="inline-flex">
               <Button variant="secondary" size="lg">Sign In</Button>
             </Link>
           )}
